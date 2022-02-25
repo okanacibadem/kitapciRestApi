@@ -1,0 +1,93 @@
+﻿@model IEnumerable<kitapciRestApi.Models.Kitaplar>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.barkod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kitapadi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yazar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yayinevi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.turu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.basimtarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.konum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.konumsira)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.durum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.okunma)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.barkod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kitapadi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yazar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yayinevi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.turu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.basimtarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.konum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.konumsira)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.durum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.okunma)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.kitapid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.kitapid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.kitapid })
+        </td>
+    </tr>
+}
+
+</table>

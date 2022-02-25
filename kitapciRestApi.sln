@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kitapciRestApi", "kitapciRestApi\kitapciRestApi.csproj", "{486D8D4D-5E37-40C9-98A5-BBBE1F7B9100}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcKitapci", "MvcKitapci\MvcKitapci.csproj", "{4BCDA9BC-CD8E-411D-A610-642D7ADDBB45}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{486D8D4D-5E37-40C9-98A5-BBBE1F7B9100}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{486D8D4D-5E37-40C9-98A5-BBBE1F7B9100}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{486D8D4D-5E37-40C9-98A5-BBBE1F7B9100}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{486D8D4D-5E37-40C9-98A5-BBBE1F7B9100}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BCDA9BC-CD8E-411D-A610-642D7ADDBB45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BCDA9BC-CD8E-411D-A610-642D7ADDBB45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BCDA9BC-CD8E-411D-A610-642D7ADDBB45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BCDA9BC-CD8E-411D-A610-642D7ADDBB45}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C74637C-8611-423E-9049-11D55CBF47D1}
+	EndGlobalSection
+EndGlobal

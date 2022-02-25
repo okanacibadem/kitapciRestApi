@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KitapciModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Alisveris">
+          <Key>
+            <PropertyRef Name="alisverisid" />
+          </Key>
+          <Property Name="alisverisid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kitap" Type="varchar" MaxLength="50" />
+          <Property Name="ogrenci" Type="varchar" MaxLength="50" />
+          <Property Name="alistarihi" Type="date" />
+          <Property Name="iadetarihi" Type="date" />
+          <Property Name="veren" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Dolaplar">
+          <Key>
+            <PropertyRef Name="dolapno" />
+          </Key>
+          <Property Name="dolapno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dolapadi" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GenelBilgiler">
+          <Key>
+            <PropertyRef Name="gbid" />
+          </Key>
+          <Property Name="gbid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="okuladi" Type="varchar" MaxLength="50" />
+          <Property Name="mudur" Type="varchar" MaxLength="50" />
+          <Property Name="egitimyili" Type="varchar" MaxLength="50" />
+          <Property Name="sorumlu" Type="varchar" MaxLength="50" />
+          <Property Name="kitapgunsayisi" Type="int" />
+        </EntityType>
+        <EntityType Name="Kitaplar">
+          <Key>
+            <PropertyRef Name="kitapid" />
+          </Key>
+          <Property Name="kitapid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="barkod" Type="int" />
+          <Property Name="kitapadi" Type="varchar" MaxLength="50" />
+          <Property Name="yazar" Type="varchar" MaxLength="50" />
+          <Property Name="yayinevi" Type="varchar" MaxLength="50" />
+          <Property Name="turu" Type="varchar" MaxLength="50" />
+          <Property Name="basimtarihi" Type="date" />
+          <Property Name="konum" Type="varchar" MaxLength="50" />
+          <Property Name="konumsira" Type="varchar" MaxLength="50" />
+          <Property Name="aciklama" Type="varchar" MaxLength="50" />
+          <Property Name="durum" Type="varchar" MaxLength="50" />
+          <Property Name="okunma" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Kullanicilar">
+          <Key>
+            <PropertyRef Name="kullaniciid" />
+          </Key>
+          <Property Name="kullaniciid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adsoyad" Type="varchar" MaxLength="50" />
+          <Property Name="kullaniciadi" Type="varchar" MaxLength="50" />
+          <Property Name="sifre" Type="int" />
+          <Property Name="rol" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Ogrenciler">
+          <Key>
+            <PropertyRef Name="ogrno" />
+          </Key>
+          <Property Name="ogrno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adsoyad" Type="varchar" MaxLength="50" />
+          <Property Name="sinif" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Siniflar">
+          <Key>
+            <PropertyRef Name="sinifid" />
+          </Key>
+          <Property Name="sinifid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sinifadi" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityContainer Name="KitapciModelStoreContainer">
+          <EntitySet Name="Alisveris" EntityType="Self.Alisveris" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dolaplar" EntityType="Self.Dolaplar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GenelBilgiler" EntityType="Self.GenelBilgiler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kitaplar" EntityType="Self.Kitaplar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ogrenciler" EntityType="Self.Ogrenciler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Siniflar" EntityType="Self.Siniflar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KitapciModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Alisveris">
+          <Key>
+            <PropertyRef Name="alisverisid" />
+          </Key>
+          <Property Name="alisverisid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kitap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ogrenci" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="alistarihi" Type="DateTime" Precision="0" />
+          <Property Name="iadetarihi" Type="DateTime" Precision="0" />
+          <Property Name="veren" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Dolaplar">
+          <Key>
+            <PropertyRef Name="dolapno" />
+          </Key>
+          <Property Name="dolapno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dolapadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="GenelBilgiler">
+          <Key>
+            <PropertyRef Name="gbid" />
+          </Key>
+          <Property Name="gbid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="okuladi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mudur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="egitimyili" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sorumlu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kitapgunsayisi" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Kitaplar">
+          <Key>
+            <PropertyRef Name="kitapid" />
+          </Key>
+          <Property Name="kitapid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="barkod" Type="Int32" />
+          <Property Name="kitapadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="yazar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="yayinevi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="turu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="basimtarihi" Type="DateTime" Precision="0" />
+          <Property Name="konum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="konumsira" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="aciklama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="durum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="okunma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Kullanicilar">
+          <Key>
+            <PropertyRef Name="kullaniciid" />
+          </Key>
+          <Property Name="kullaniciid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adsoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kullaniciadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sifre" Type="Int32" />
+          <Property Name="rol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Ogrenciler">
+          <Key>
+            <PropertyRef Name="ogrno" />
+          </Key>
+          <Property Name="ogrno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adsoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sinif" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Siniflar">
+          <Key>
+            <PropertyRef Name="sinifid" />
+          </Key>
+          <Property Name="sinifid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sinifadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityContainer Name="KitapciEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Alisveris" EntityType="Self.Alisveris" />
+          <EntitySet Name="Dolaplar" EntityType="Self.Dolaplar" />
+          <EntitySet Name="GenelBilgiler" EntityType="Self.GenelBilgiler" />
+          <EntitySet Name="Kitaplar" EntityType="Self.Kitaplar" />
+          <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
+          <EntitySet Name="Ogrenciler" EntityType="Self.Ogrenciler" />
+          <EntitySet Name="Siniflar" EntityType="Self.Siniflar" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KitapciModelStoreContainer" CdmEntityContainer="KitapciEntities">
+          <EntitySetMapping Name="Alisveris">
+            <EntityTypeMapping TypeName="KitapciModel.Alisveris">
+              <MappingFragment StoreEntitySet="Alisveris">
+                <ScalarProperty Name="alisverisid" ColumnName="alisverisid" />
+                <ScalarProperty Name="kitap" ColumnName="kitap" />
+                <ScalarProperty Name="ogrenci" ColumnName="ogrenci" />
+                <ScalarProperty Name="alistarihi" ColumnName="alistarihi" />
+                <ScalarProperty Name="iadetarihi" ColumnName="iadetarihi" />
+                <ScalarProperty Name="veren" ColumnName="veren" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dolaplar">
+            <EntityTypeMapping TypeName="KitapciModel.Dolaplar">
+              <MappingFragment StoreEntitySet="Dolaplar">
+                <ScalarProperty Name="dolapno" ColumnName="dolapno" />
+                <ScalarProperty Name="dolapadi" ColumnName="dolapadi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GenelBilgiler">
+            <EntityTypeMapping TypeName="KitapciModel.GenelBilgiler">
+              <MappingFragment StoreEntitySet="GenelBilgiler">
+                <ScalarProperty Name="gbid" ColumnName="gbid" />
+                <ScalarProperty Name="okuladi" ColumnName="okuladi" />
+                <ScalarProperty Name="mudur" ColumnName="mudur" />
+                <ScalarProperty Name="egitimyili" ColumnName="egitimyili" />
+                <ScalarProperty Name="sorumlu" ColumnName="sorumlu" />
+                <ScalarProperty Name="kitapgunsayisi" ColumnName="kitapgunsayisi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kitaplar">
+            <EntityTypeMapping TypeName="KitapciModel.Kitaplar">
+              <MappingFragment StoreEntitySet="Kitaplar">
+                <ScalarProperty Name="kitapid" ColumnName="kitapid" />
+                <ScalarProperty Name="barkod" ColumnName="barkod" />
+                <ScalarProperty Name="kitapadi" ColumnName="kitapadi" />
+                <ScalarProperty Name="yazar" ColumnName="yazar" />
+                <ScalarProperty Name="yayinevi" ColumnName="yayinevi" />
+                <ScalarProperty Name="turu" ColumnName="turu" />
+                <ScalarProperty Name="basimtarihi" ColumnName="basimtarihi" />
+                <ScalarProperty Name="konum" ColumnName="konum" />
+                <ScalarProperty Name="konumsira" ColumnName="konumsira" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="durum" ColumnName="durum" />
+                <ScalarProperty Name="okunma" ColumnName="okunma" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanicilar">
+            <EntityTypeMapping TypeName="KitapciModel.Kullanicilar">
+              <MappingFragment StoreEntitySet="Kullanicilar">
+                <ScalarProperty Name="kullaniciid" ColumnName="kullaniciid" />
+                <ScalarProperty Name="adsoyad" ColumnName="adsoyad" />
+                <ScalarProperty Name="kullaniciadi" ColumnName="kullaniciadi" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="rol" ColumnName="rol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ogrenciler">
+            <EntityTypeMapping TypeName="KitapciModel.Ogrenciler">
+              <MappingFragment StoreEntitySet="Ogrenciler">
+                <ScalarProperty Name="ogrno" ColumnName="ogrno" />
+                <ScalarProperty Name="adsoyad" ColumnName="adsoyad" />
+                <ScalarProperty Name="sinif" ColumnName="sinif" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Siniflar">
+            <EntityTypeMapping TypeName="KitapciModel.Siniflar">
+              <MappingFragment StoreEntitySet="Siniflar">
+                <ScalarProperty Name="sinifid" ColumnName="sinifid" />
+                <ScalarProperty Name="sinifadi" ColumnName="sinifadi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="KitapciModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
